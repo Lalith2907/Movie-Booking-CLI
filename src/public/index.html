@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Book Your Show</h1>
+        <div id="menu">
+            <button onclick="showSection('details')">Enter Details</button>
+            <button onclick="showSection('showDetails')">Show Details</button>
+            <button onclick="showSection('bookMovie')">Book Movies</button>
+            <button onclick="showSection('generateBill')">Generate Bill</button>
+        </div>
+        <div id="details" class="section">
+            <h2>Enter Details</h2>
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="mobile" placeholder="Mobile">
+            <button onclick="saveDetails()">Save</button>
+        </div>
+        <div id="showDetails" class="section">
+            <h2>Show Details</h2>
+            <input type="text" id="searchName" placeholder="Enter name to search">
+            <button onclick="searchDetails()">Search</button>
+            <div id="searchResults"></div>
+        </div>
+        <div id="bookMovie" class="section">
+            <h2>Book Movie</h2>
+            <select id="movieSelect" onchange="renderSeatMap()">
+                <option value="Dune 2">Dune 2</option>
+                <option value="Transformers One">Transformers One</option>
+                <option value="Oppenheimer">Oppenheimer</option>
+                <option value="Inception">Inception</option>
+                <option value="Tenet">Tenet</option>
+            </select>
+            <div id="seatMap"></div>
+            <button onclick="bookSeat()">Book Seat</button>
+        </div>
+        <div id="generateBill" class="section">
+            <h2>Generate Bill</h2>
+            <input type="text" id="billName" placeholder="Enter name">
+            <button onclick="generateBill()">Generate Bill</button>
+            <div id="billDetails"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
